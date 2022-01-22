@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	cin >> A;
+	cin	>> B;
+	cin >> C;
+
+	cout << (A + B) % C<<"\n";
+	cout << ((A % C) + (B % C)) % C << "\n";
+	cout << (A * B) % C << "\n";
+	cout << ((A % C) * (B % C)) % C << "\n";
+}

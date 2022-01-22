@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+	double A = 0;
+	double B = 0;
+	cout.precision(10);
+
+	cin >> A;
+	cin	>> B;
+	cout << A / B;
+}

@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int value[3];
+int c = 0;
+
+void Hansu() {	
+	int dif;
+	int dif2;
+	dif = value[0] - value[1];
+	dif2 = value[1] - value[2];
+	if (dif == dif2)
+		c++;
+}
+
+void Number(int c) {
+		for (int i = 2; i>=0; i--)
+		{
+			if (c == 0)
+				break;
+			value[i] = c % 10;
+			c /= 10;
+		}
+		Hansu();		
+}
+
+int main()
+{
+	int n;
+	cin >> n;
+	if (n == 1000)
+		c--;
+	for (int i = 1; i <= n; i++) {
+		if (i < 100)
+		{
+			c++;
+			continue;
+		}
+		Number(i);
+	}
+	cout << c;
+}

@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+	int test_case;
+
+void Go(){
+	int student_number;
+	int* score = new int[1000];
+	int sum = 0;
+	int avg = 0;
+	int count = 0;
+	double percent = 0;
+	double a;
+
+		cin >> student_number;
+		for (int j = 0; j < student_number; j++)
+			cin >> score[j];
+		for (int j = 0; j < student_number; j++)
+			sum += score[j];
+
+		avg = sum / student_number;
+
+		for (int k = 0; k < student_number; k++)
+		{
+			if (score[k] > avg)
+				count++;
+		
+		}
+		a = 100 / (double)student_number;
+		percent = a * count;
+		cout << fixed;
+        cout.precision(3);
+
+
+
+		cout << percent << "%" << "\n";
+
+	}
+
+
+int main() {
+	cin >> test_case;
+	for(int i=0;i<test_case;i++)
+	Go();
+	
+}

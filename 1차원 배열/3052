@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	
+	int a[10] = {};
+	int b[42] = {};
+	int count = 0;
+	
+	for(int i=0;i<=9;i++)   //a배열에 10개저장
+	{
+		cin >> a[i];      
+	}
+	for (int i = 0; i <= 9; i++) //a배열 10개를 각각 42로나눔
+	{
+		a[i] %= 42;
+	}
+	for (int i = 0; i <= 9; i++)         
+	{
+		for (int j = 0; j <= 41; j++)
+		{
+			if (a[i] == j)
+				b[j]++;
+		}
+	}
+	for (int j = 0; j <= 41; j++)
+	{
+		if (b[j] != 0)
+			count++;
+	}
+
+	cout << count;
+}

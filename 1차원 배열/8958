@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+
+	int test_case;
+	char* c = new char[80];
+	int score=0;
+	int tmp=0;
+	cin >> test_case;
+	for (int i = 0; i < test_case; i++)
+	{
+		cin >> c;
+		for (int j = 0; j < strlen(c); j++)
+		{
+			if (j == (strlen(c) - 1))
+			{
+				if (c[j] == 'O')
+				{
+					tmp++;
+					for (int k = 1; k <= tmp; k++)
+					{
+						score += k;
+						c[j] = 'E';
+					}
+					tmp = 0;
+				}
+
+			}
+
+			if (c[j] == 'O')
+			{
+				tmp++;
+				continue;
+			}
+			if (c[j] == 'X')
+			{
+				for (int k = 1; k <= tmp; k++)
+				{
+					score += k;
+				}
+				tmp = 0;
+				continue;
+			}
+		}
+		
+		cout << score << "\n";
+		score = 0;
+
+	}
+	delete[] c;
+}

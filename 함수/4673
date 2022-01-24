@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+
+int FindScore(int num) {
+	
+	int sum = num;
+
+	while (1)
+	{
+		if (num == 0)
+			break;
+		sum += num % 10;
+		num /= 10;
+	}
+	return sum;
+}
+
+
+int main(){
+
+	bool* n_selfnumber = new bool[15001];
+	memset(n_selfnumber, 0, 10000);	
+	int score;
+
+	for (int i = 0; i <= 10000; i++)
+	{
+		score = FindScore(i);
+		if (i > 10000)
+			break;
+		n_selfnumber[score] = true;
+		
+	}
+	for (int i = 0; i <= 10000; i++)
+	{
+			if(n_selfnumber[i] == false)
+				cout << i << "\n"; 
+	}
+	delete[] n_selfnumber;
+}

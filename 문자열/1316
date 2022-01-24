@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+
+int main(){
+
+	int t;
+	cin >> t;
+	int count = 0;
+	for (int i = 0; i < t; i++)
+	{
+		char* c = new char[101];
+		bool* check = new bool[26];
+		for (int k = 0; k < 26; k++)
+		{
+			check[k] = NULL;
+		}
+		bool b = new bool;
+		b = true;
+		cin >> c;
+		
+		for (int j = 0; j < strlen(c); j++)
+		{
+
+				if (c[j] == c[j + 1])
+					continue;
+
+				else 
+					for (int k = 0; k < 26; k++)
+					{
+						if(c[j] == (char)(k + 97))
+					{
+
+							if (check[k] == true)
+							{
+								b = false;
+								break;
+							}
+							else
+							{
+								check[k] = true;
+								break;
+							}
+					}
+					}
+
+			
+		}
+
+
+		if (b == true)
+			count++;
+		delete[] c;
+		delete[] check;
+	}
+
+	cout << count;
+
+}

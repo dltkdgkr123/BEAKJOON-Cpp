@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int* NumberChanger(int i)
+{
+	int* p = new int[3];
+	int tmp = 0;
+
+	for (int j = 0; j < 3; j++)
+	{
+		tmp = i % 10;
+		p[j] = tmp;
+		i /= 10;
+	}
+
+	return p;
+}
+
+
+
+int main() {
+	int i1=0;
+	int i2=0;
+	int* rev_i1_p;
+	int* rev_i2_p;
+	int rev_i1;
+	int rev_i2;
+	int bigger_value;
+	cin >> i1;
+	cin >> i2;
+	rev_i1_p = NumberChanger(i1);
+	rev_i2_p = NumberChanger(i2);
+	
+	
+	rev_i1 = rev_i1_p[0] * 100 + rev_i1_p[1] * 10 + rev_i1_p[2];
+	rev_i2 = rev_i2_p[0] * 100 + rev_i2_p[1] * 10 + rev_i2_p[2];
+
+
+	bigger_value = rev_i1 >= rev_i2 ? rev_i1 : rev_i2;
+	cout << bigger_value;
+}

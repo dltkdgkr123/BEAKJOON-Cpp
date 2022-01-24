@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+int main() {
+
+	string s;
+	int a[26];
+	int max = 0;
+	int* p = 0;
+	char c;
+	memset(a, 0, sizeof(a));
+	cin >> s;
+
+	for (int i = 0; i < s.size(); i++)
+	{
+		for (int j = 0;; j++)
+			if (s[i] == char(65 + j) || s[i] == char(97 + j))
+			{
+				a[j]++;
+				break;
+			}
+	}
+	for (int i = 0; i < 26; i++)
+	{
+		if (max < a[i])
+		{
+			max = a[i];
+			p = &a[i];
+			c = 65 + i;
+		}
+	}
+	for (int i = 0; i < 26; i++) {
+		if (max == a[i] && &a[i] != p)
+			c = '?';
+	}	
+	cout << c;
+}

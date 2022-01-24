@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+	int a = 0;
+	int b = 0;
+	int add[100];
+	int t = 0;
+	cin >> t;
+	for (int i = 1; i <= t; i++)
+	{
+		cin >> a;
+		cin >> b;
+		add[i - 1] = a + b;
+	}
+		for(int i = 1; i <= t; i++)
+		{
+		cout << add[i - 1] << endl;
+
+	}
+
+
+
+}

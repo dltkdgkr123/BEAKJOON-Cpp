@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+	int a = 1;
+	int b = 0;
+
+
+	while(1)
+	{
+    	cin >> a;
+		cin >> b;
+		if (cin.eof()==true)
+			break;
+
+
+		cout << a + b << "\n";
+
+	}
+
+}

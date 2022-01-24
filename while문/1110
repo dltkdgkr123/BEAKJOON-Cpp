@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+	int number = 0;
+	int second_number = 0; 
+	int first_number = 0;
+	int new_number = 0;
+	int count = 0;
+	int same_value = 0;
+	cin >> number;
+	same_value = number;
+
+	while(1)
+	{
+		second_number = number % 10;
+		first_number = number - second_number;
+		new_number = second_number + (first_number / 10);
+		number = (second_number * 10) + (new_number % 10);
+		count++;
+		
+		if (number == same_value)
+		{
+			break;
+		}
+	}
+	cout << count;
+
+}

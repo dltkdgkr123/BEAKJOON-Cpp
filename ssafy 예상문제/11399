@@ -1,3 +1,11 @@
+/*
+	first를 기준으로 내림차순 정렬하고 인덱스끝까지 비교하며 second가 더 낮은 idx가 존재하면 break; = 두 순위 다 밀리는것이므로 
+	-> 시간 초과
+	
+	first를 기준으로 오름차순 정렬하고 max값을 v[0].second로 둔 후 더 낮은second가 존재할때마다 cnt++후 max값 갱신
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
